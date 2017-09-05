@@ -77,9 +77,9 @@ define('services/ng-message',[
                         }));
                     });
                 },
-                on: function(topic, handler, ignoreSelfMessages) {
+                on: function(topic, handler) {
                     init();
-                    listeners.push({ topic: topic, handler: (msgData, msg) => msg.fromMe && ignoreSelfMessages ? void(0) : handler(msgData, msg)});
+                    listeners.push({ topic: topic, handler: handler });
                 }
             };
         }
